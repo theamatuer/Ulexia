@@ -8,11 +8,12 @@
 
     <TextView
         android:id="@+id/cardText"
-        android:layout_width="590dp"
+        android:layout_width="728dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/next"
         android:layout_centerHorizontal="true"
         android:gravity="center"
+        android:letterSpacing="0.6"
         android:text="TextView"
         android:textSize="50sp"
         tools:layout_editor_absoluteX="141dp"
