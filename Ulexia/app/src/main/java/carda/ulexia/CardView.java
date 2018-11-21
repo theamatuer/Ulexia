@@ -14,7 +14,10 @@ public class CardView extends AppCompatActivity {
     public static String[] parsed_user_input = InsertView.user_input.split("\\s+");
     private Button prev_btn;
     private Button next_btn;
+    private Button incr_btn;
+    private Button dcr_btn;
     private Integer index = 0;
+    private float textSpacing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,7 @@ public class CardView extends AppCompatActivity {
 
         cardText = (TextView) findViewById(R.id.cardText);
         cardText.setText(parsed_user_input[index]);
-
+        textSpacing = cardText.getLetterSpacing();
 
         prev_btn = (Button) findViewById(R.id.prev);
         prev_btn.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +43,25 @@ public class CardView extends AppCompatActivity {
                 showNextCard();
             }
         });
-    }
+
+        incr_btn = (Button) findViewById(R.id.plusButton);
+        incr_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickIncrease();
+            }
+        });
+
+        dcr_btn = (Button) findViewById(R.id.minusButton);
+        dcr_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickDecrease();
+            }
+        });
+
+
+     }
 
     public void showPrevCard() {
         decrement();
@@ -61,6 +82,16 @@ public class CardView extends AppCompatActivity {
     public void increment() {
         if (index < parsed_user_input.length) {
             index++;
+        }
+    }
+    public void onClickIncrease(){
+        textSpacing +=0.5;
+        cardText.setLetterSpacing(textSpacing);
+    }
+    public void onClickDecrease(){
+        if (textSpacing > 1) {
+            textSpacing -= 0.5;
+            cardText.setLetterSpacing(textSpacing);
         }
     }
 }
