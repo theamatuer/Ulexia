@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
+import com.tomer.fadingtextview.FadingTextView;
+
 public class HomeView extends AppCompatActivity {
 
     private Button button;
@@ -15,6 +17,10 @@ public class HomeView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_view);
+
+        // initialize fading text view properties
+        FadingTextView fadingTextView=(FadingTextView)findViewById(R.id.fade);
+        fadingTextView.setTimeout(2, FadingTextView.SECONDS);
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
