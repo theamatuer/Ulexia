@@ -22,8 +22,9 @@
             android:name=".InsertView"
             android:label="Add Document"
             />
-        <activity android:name=".CardView">
-            </activity>
+        <activity android:name=".CardView"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
     </application>
 
 </manifest>

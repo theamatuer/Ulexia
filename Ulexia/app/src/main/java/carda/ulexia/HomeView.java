@@ -20,7 +20,7 @@ public class HomeView extends AppCompatActivity {
 
         // initialize fading text view properties
         FadingTextView fadingTextView=(FadingTextView)findViewById(R.id.fade);
-        fadingTextView.setTimeout(2, FadingTextView.SECONDS);
+        fadingTextView.setTimeout(1, FadingTextView.SECONDS);
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

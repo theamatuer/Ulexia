@@ -11,7 +11,7 @@ public class CardView extends AppCompatActivity {
 
     private String user_input = InsertView.user_input;
     private TextView cardText;
-    public static String[] parsed_user_input = InsertView.user_input.split(" ");
+    public static String[] parsed_user_input = InsertView.user_input.split("\\s+");
     private Button prev_btn;
     private Button next_btn;
     private Integer index = 0;
@@ -22,7 +22,7 @@ public class CardView extends AppCompatActivity {
         setContentView(R.layout.activity_card_view);
 
         cardText = (TextView) findViewById(R.id.cardText);
-        cardText.setText(parsed_user_input[0]);
+        cardText.setText(parsed_user_input[index]);
 
 
         prev_btn = (Button) findViewById(R.id.prev);
