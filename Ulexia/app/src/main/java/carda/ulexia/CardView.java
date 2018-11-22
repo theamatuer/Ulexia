@@ -85,12 +85,12 @@ public class CardView extends AppCompatActivity {
         }
     }
     public void onClickIncrease(){
-        textSpacing +=0.5;
+        textSpacing +=0.02;
         cardText.setLetterSpacing(textSpacing);
     }
     public void onClickDecrease(){
-        if (textSpacing > 1) {
-            textSpacing -= 0.5;
+        if (textSpacing > 0.25) {
+            textSpacing -= 0.02;
             cardText.setLetterSpacing(textSpacing);
         }
     }
