@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.os.Handler;
 
 public class CardView extends AppCompatActivity {
 
@@ -16,8 +17,11 @@ public class CardView extends AppCompatActivity {
     private Button next_btn;
     private Button incr_btn;
     private Button dcr_btn;
+    private Button play_btn;
     private Integer index = 0;
     private float textSpacing;
+    Handler handler;
+    Boolean playMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +64,28 @@ public class CardView extends AppCompatActivity {
             }
         });
 
+        handler = new Handler();
+        play_btn = (Button) findViewById(R.id.playButton);
+        play_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickPlay();
+            }
+        });
+
 
      }
 
+    private Runnable runnableCode = new Runnable() {
+        @Override
+        public void run() {
+            // Do something here on the main thread
+            showNextCard() ;
+            // Repeat this the same runnable code block again another 2 seconds
+            // 'this' is referencing the Runnable object
+            handler.postDelayed(this, 500);
+        }
+    };
     public void showPrevCard() {
         decrement();
         cardText.setText(parsed_user_input[index]);
@@ -80,7 +103,7 @@ public class CardView extends AppCompatActivity {
     }
 
     public void increment() {
-        if (index < parsed_user_input.length) {
+        if (index < parsed_user_input.length-1) {
             index++;
         }
     }
@@ -94,4 +117,15 @@ public class CardView extends AppCompatActivity {
             cardText.setLetterSpacing(textSpacing);
         }
     }
+    public void onClickPlay(){
+        if (playMode){
+            handler.post(runnableCode);
+            playMode = false;
+        } else{
+
+            handler.removeCallbacks(runnableCode);
+            playMode = true;
+        }
+    }
+
 }

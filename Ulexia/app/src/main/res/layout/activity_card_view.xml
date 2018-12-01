@@ -18,15 +18,26 @@
         android:textSize="50sp"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="193dp" />
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
     <Button
         android:id="@+id/plusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp"
         android:text="+"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="⏯"
         android:textSize="36sp" />
 
     <Button
@@ -34,10 +45,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/prev"
         android:lineSpacingExtra="36sp"
         android:text="—"
         android:textSize="36sp" />
+
+</RelativeLayout>
 
     <Button
         android:id="@+id/next"
