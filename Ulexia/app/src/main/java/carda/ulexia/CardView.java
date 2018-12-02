@@ -1,5 +1,6 @@
 package carda.ulexia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,11 +23,14 @@ public class CardView extends AppCompatActivity {
     private float textSpacing;
     Handler handler;
     Boolean playMode = true;
+    private Button back_to_insert_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
+
+        back_to_insert_btn = (Button) findViewById(R.id.back_to_insert);
 
         cardText = (TextView) findViewById(R.id.cardText);
         cardText.setText(parsed_user_input[index]);
@@ -73,8 +77,17 @@ public class CardView extends AppCompatActivity {
             }
         });
 
+        back_to_insert_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back_to_insert_view();
+            }
+        });
+
 
      }
+
+
 
     private Runnable runnableCode = new Runnable() {
         @Override
@@ -126,6 +139,11 @@ public class CardView extends AppCompatActivity {
             handler.removeCallbacks(runnableCode);
             playMode = true;
         }
+    }
+
+    public void back_to_insert_view() {
+        Intent intent = new Intent(this, InsertView.class);
+        startActivity(intent);
     }
 
 }
