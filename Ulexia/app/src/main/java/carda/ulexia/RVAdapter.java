@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 
@@ -27,15 +34,17 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
 
         TextView pName;
         Button pButton;
+//        String pText;
         //
         TextView filename;
         TextView filedata;
+
 
         BlockViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             pName = (TextView)itemView.findViewById(R.id.pName);
-
+//            pText =
             pButton = (Button)itemView.findViewById(R.id.pButton);
         }
     }
@@ -61,26 +70,67 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(BlockViewHolder BlockViewHolder, int i) {
+    public void onBindViewHolder(BlockViewHolder blockViewHolder, int i) {
         final String name = blocks.get(i).filename;
-        BlockViewHolder.pName.setText(name);
+        final String text = blocks.get(i).filetext;
+        blockViewHolder.pName.setText(name);
 
         // block variables
 
-        BlockViewHolder.pButton.setOnClickListener(new View.OnClickListener() {
+        blockViewHolder.pButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(context, CardView.class);
-                intent.putExtra("name", name);
+                // load file
+                String textcontent = text;
+//                FileInputStream fis = null;
+//
+//                try {
+//                    fis = InsertView.openFileInput(name);
+//                    InputStreamReader isr = new InputStreamReader(fis);
+//                    BufferedReader br = new BufferedReader(isr);
+//                    StringBuilder sb = new StringBuilder();
+//                    String text;
+//
+//                    while ((text = br.readLine()) != null) {
+//                        sb.append(text).append("\n");
+//                    }
+//
+////                    mEditText.setText(sb.toString());
+//                    textcontent = sb.toString();
+//
+//                    Log.d("myTag", textcontent);
+////                    blockViewHolder.pName.setText(textcontent);
+//
+//                } catch (FileNotFoundException e) {
+//                    Log.d("myTag", "caught1");
+//
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    Log.d("myTag", "caught2");
+//
+//                    e.printStackTrace();
+//                } finally {
+//                    if (fis != null) {
+//                        try {
+//                            fis.close();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+                // end load file
 
+                Intent intent = new Intent(context, CardView.class);
+                intent.putExtra("textcontent", textcontent);
                 context.startActivity(intent);
             }
         });
-//        BlockViewHolder.personPhoto.setImageResource(persons.get(i).photoId);
     }
 
     @Override
     public int getItemCount() {
         return blocks.size();
     }
+
+
 }

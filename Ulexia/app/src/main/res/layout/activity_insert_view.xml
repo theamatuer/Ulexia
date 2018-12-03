@@ -55,17 +55,17 @@
         android:layout_marginEnd="0dp"
         android:background="@android:color/transparent" />
 
-    <Button
-        android:id="@+id/button_start"
-        android:layout_width="167dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
-        android:text="Start Reading"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/white"
-        android:textSize="24sp" />
+    <!--<Button-->
+        <!--android:id="@+id/button_start"-->
+        <!--android:layout_width="167dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:text="Start Reading"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="24sp" />-->
 
     <Button
         android:id="@+id/saveb"
@@ -74,32 +74,32 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/colorPrimary"
+        android:onClick="saveUserInput"
         android:text="Save"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:onClick="saveUserInput"/>
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/loadb"
-        android:layout_width="167dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="61dp"
-        android:background="@color/colorPrimary"
-        android:text="Load"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:onClick="load"/>
+    <!--<Button-->
+        <!--android:id="@+id/loadb"-->
+        <!--android:layout_width="167dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginEnd="9dp"-->
+        <!--android:layout_marginRight="9dp"-->
+        <!--android:layout_marginBottom="67dp"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:onClick="load"-->
+        <!--android:text="Load"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="24sp" />-->
 
 
 </RelativeLayout>

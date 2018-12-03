@@ -1,5 +1,6 @@
 package carda.ulexia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ public class CardView extends AppCompatActivity {
 
     private String user_input = InsertView.user_input;
     private TextView cardText;
-    public static String[] parsed_user_input = InsertView.user_input.split("\\s+");
+    public static String[] parsed_user_input = null; // InsertView.user_input.split("\\s+");
     private Button prev_btn;
     private Button next_btn;
     private Button incr_btn;
@@ -27,6 +28,11 @@ public class CardView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
+
+        // get intent, text content
+        Intent intent = getIntent();
+        String rawinput = getIntent().getStringExtra("textcontent");
+        parsed_user_input = rawinput.split("\\s+");
 
         cardText = (TextView) findViewById(R.id.cardText);
         cardText.setText(parsed_user_input[index]);

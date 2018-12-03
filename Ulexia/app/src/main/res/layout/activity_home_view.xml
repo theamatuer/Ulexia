@@ -38,20 +38,20 @@ tools:context=".HomeView">
         android:textColor="@android:color/white"
         android:textSize="24sp" />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="346dp"-->
-        <!--android:layout_marginTop="87dp"-->
-        <!--android:layout_marginEnd="0dp"-->
-        <!--android:layout_marginRight="0dp"-->
-        <!--android:orientation="vertical">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="vertical">
 
-        <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/rv"-->
-            <!--android:layout_width="395dp"-->
-            <!--android:layout_height="337dp" />-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rev"
+            android:layout_width="395dp"
+            android:layout_height="372dp" />
 
 
-    <!--</LinearLayout>-->
+    </LinearLayout>
 
 </RelativeLayout>
