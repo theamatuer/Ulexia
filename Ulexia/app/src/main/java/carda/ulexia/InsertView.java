@@ -24,7 +24,7 @@ public class InsertView extends AppCompatActivity {
     private TextView tv;
     public static String user_input = "";
 
-    public static String FILE_NAME = "";
+//    public static String FILE_NAME = "";
     EditText mEditText;
     EditText mEditName;
 
@@ -59,7 +59,7 @@ public class InsertView extends AppCompatActivity {
         user_input = tv.getText().toString();
         String text = mEditText.getText().toString();
         String filename = mEditName.getText().toString();
-        FILE_NAME = filename + ".txt";
+//        FILE_NAME = filename + ".txt";
 
         // instead of save
         // save to names arraylist for intent

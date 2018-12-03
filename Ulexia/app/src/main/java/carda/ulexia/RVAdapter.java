@@ -36,8 +36,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
         Button pButton;
 //        String pText;
         //
-        TextView filename;
-        TextView filedata;
+//        TextView filename;
+//        TextView filedata;
 
 
         BlockViewHolder(View itemView) {
@@ -82,6 +82,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
             public void onClick(View view){
                 // load file
                 String textcontent = text;
+                Log.d("myTag", "button clicked");
+                Log.d("myTag", name);
+                Log.d("myTag", text);
 //                FileInputStream fis = null;
 //
 //                try {
@@ -120,8 +123,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
 //                }
                 // end load file
 
-                Intent intent = new Intent(context, CardView.class);
+                Intent intent = new Intent(context, CardaView.class);
                 intent.putExtra("textcontent", textcontent);
+//                Log.d("myTag", "made past here");
                 context.startActivity(intent);
             }
         });

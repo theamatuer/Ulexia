@@ -20,11 +20,10 @@
         </activity>
         <activity
             android:name=".InsertView"
-            android:label="Add Document"
-            />
-        <activity android:name=".CardView"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            />
+            android:label="Add Document"></activity>
+        <activity android:name=".CardaView"
+            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+
     </application>
 
 </manifest>
