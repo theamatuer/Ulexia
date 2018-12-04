@@ -1,5 +1,6 @@
 package carda.ulexia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,12 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.os.Handler;
 
-public class CardView extends AppCompatActivity {
+public class CardaView extends AppCompatActivity {
 
 
-    private String user_input = InsertView.user_input;
+    private String user_input = null; //InsertView.user_input;
     private TextView cardText;
-    public static String[] parsed_user_input = InsertView.user_input.split("\\s+");
+    public static String[] parsed_user_input = null; // InsertView.user_input.split("\\s+");
     private Button prev_btn;
     private Button next_btn;
     private Button incr_btn;
@@ -22,11 +23,18 @@ public class CardView extends AppCompatActivity {
     private float textSpacing;
     Handler handler;
     Boolean playMode = true;
+    private int delay = 500; //delay in milliseconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
+
+        // get intent, text content
+        Intent intent = getIntent();
+        String rawinput = intent.getStringExtra("textcontent");
+        parsed_user_input = rawinput.split("\\s+");
+
 
         cardText = (TextView) findViewById(R.id.cardText);
         cardText.setText(parsed_user_input[index]);
@@ -83,7 +91,7 @@ public class CardView extends AppCompatActivity {
             showNextCard() ;
             // Repeat this the same runnable code block again another 2 seconds
             // 'this' is referencing the Runnable object
-            handler.postDelayed(this, 500);
+            handler.postDelayed(this, delay);
         }
     };
     public void showPrevCard() {
