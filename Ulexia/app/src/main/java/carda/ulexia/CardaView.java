@@ -23,6 +23,7 @@ public class CardaView extends AppCompatActivity {
     private float textSpacing;
     Handler handler;
     Boolean playMode = true;
+    private int delay = 500; //delay in milliseconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +91,7 @@ public class CardaView extends AppCompatActivity {
             showNextCard() ;
             // Repeat this the same runnable code block again another 2 seconds
             // 'this' is referencing the Runnable object
-            handler.postDelayed(this, 500);
+            handler.postDelayed(this, delay);
         }
     };
     public void showPrevCard() {

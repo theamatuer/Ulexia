@@ -2,6 +2,7 @@ package carda.ulexia;
 
 
 import android.app.Application;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class HomeView extends AppCompatActivity {
 
-    private Button button;
+    private FloatingActionButton button;
 
     // recycler view
     public List<Block> blocks;
@@ -78,7 +79,7 @@ public class HomeView extends AppCompatActivity {
         // initialize adapter after creating file objects
         initializeAdapter();
 
-        button = (Button) findViewById(R.id.button);
+        button = (FloatingActionButton) findViewById(R.id.fab);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

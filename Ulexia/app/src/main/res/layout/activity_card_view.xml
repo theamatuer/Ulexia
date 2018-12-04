@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/cardText"
-        android:layout_width="728dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/next"
         android:layout_centerHorizontal="true"
@@ -22,7 +22,7 @@
     <RelativeLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
+        android:layout_height="62dp"
         android:layout_alignParentBottom="true">
 
         <Button
@@ -32,7 +32,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:text="+"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:tooltipText="Increase letter spacing" />
 
         <Button
             android:id="@+id/playButton"
@@ -41,7 +42,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="⏯"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:tooltipText="Autoplay" />
 
         <Button
             android:id="@+id/minusButton"
@@ -50,7 +52,8 @@
             android:layout_alignParentBottom="true"
             android:lineSpacingExtra="36sp"
             android:text="—"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:tooltipText="Decrease letter spacing" />
 
     </RelativeLayout>
 

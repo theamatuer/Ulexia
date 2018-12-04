@@ -32,7 +32,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
 
         CardView cv;
 
-        TextView pName;
         Button pButton;
 //        String pText;
         //
@@ -43,7 +42,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
         BlockViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
-            pName = (TextView)itemView.findViewById(R.id.pName);
 //            pText =
             pButton = (Button)itemView.findViewById(R.id.pButton);
         }
@@ -73,7 +71,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BlockViewHolder> {
     public void onBindViewHolder(BlockViewHolder blockViewHolder, int i) {
         final String name = blocks.get(i).filename;
         final String text = blocks.get(i).filetext;
-        blockViewHolder.pName.setText(name);
+        blockViewHolder.pButton.setText(name);
 
         // block variables
 
